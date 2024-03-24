@@ -1,0 +1,14 @@
+/* Additional Custom Styling */
+.navbar-brand {
+    margin-right: 20px; /* Add margin to separate logo from the toggler */
+  }
+  
+  .nav-link {
+    color: #fff; /* Set text color to white */
+  }
+  
+  .navbar-nav .nav-link:hover {
+    background-color: #fff; /* White background on hover */
+    color: #343a40; /* Dark blue text color on hover */
+  }
+  

@@ -1,8 +1,12 @@
 import React from 'react'
+import ListPost from '../ListPost/ListPost'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <ListPost/>
+    </div>
+
   )
 }
 
