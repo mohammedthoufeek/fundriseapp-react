@@ -2,14 +2,14 @@ import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import Base from '../Base'
 
-const Post = () => {
+const AddPost = () => {
   return (
     <Base>
-    <div>
-    <h1 style={{color:"#EF7C8E"}}>viewpost Works</h1>
+    <div className='mx-5'>
+    <h1>addpostworks</h1>
     </div>
     </Base>
   )
 }
 
-export default Post
+export default AddPost
