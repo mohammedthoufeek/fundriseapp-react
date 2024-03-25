@@ -1,8 +1,12 @@
 import React from 'react'
+import Navbar from '../Navbar/Navbar'
+import Base from '../Base'
 
 const Messages = () => {
   return (
-    <div>Messages</div>
+    <Base>
+    <h1>messages Works</h1>
+    </Base>
   )
 }
 
