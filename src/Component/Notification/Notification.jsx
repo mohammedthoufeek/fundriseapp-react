@@ -1,8 +1,12 @@
 import React from 'react'
+import Navbar from '../Navbar/Navbar'
+import Base from '../Base'
 
 const Notification = () => {
   return (
-    <div>Notification</div>
+    <Base>
+    <h1>Notification Works</h1>
+    </Base>
   )
 }
 
