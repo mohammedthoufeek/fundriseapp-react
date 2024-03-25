@@ -13,8 +13,6 @@ import Transaction from './Component/Transaction/Transaction';
 
 
 
-
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './App.css';
@@ -33,8 +31,9 @@ function App() {
             <Route path="bankaccount" element={<BankAccount />} />
             <Route path="transaction" element={<Transaction />} />
             <Route path="post" element={<Post />} />
-            <Route path="addpost" element={<AddPost />} />
-            {/* <Route path="ListPost" element={<ListPost />} /> */}
+            <Route path="AddPost" element={<AddPost />} />
+            <Route path="ListPost" element={<ListPost />} />
+
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
