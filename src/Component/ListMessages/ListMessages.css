@@ -1,0 +1,35 @@
+
+.boxx{
+    display: flex;
+    flex-direction: row;
+}
+.rbutton{
+    margin-left: 10px;
+      padding: 5px 12px;
+    size: 6px;
+}
+.listbox {
+    border: 1px solid #ccc; 
+    padding: 10px; 
+}
+.boxx {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #eee; 
+    padding: 5px 0; 
+}
+
+.boxx p {
+    margin: 0; 
+}
+
+.boxx button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.boxx button i {
+    color: #333; /* Set color for the icon */
+}

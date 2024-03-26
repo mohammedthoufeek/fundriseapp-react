@@ -4,6 +4,7 @@ import BankAccountService from '../../Services/BankAccountService';
 
 const BankAccount = () => {
   const [bankaccount, setBankaccount] = useState({
+    id:"",
     balance: "",
     accountName: "",
     accountNumber: "",
@@ -42,6 +43,8 @@ const BankAccount = () => {
       .then((resp) => {
         console.log(resp.data);
         setAddedAccount(resp.data); // Store the added account details
+        // this.BankAccountService.bankaccount = resp.data;
+        // console.log(this.BankAccountService.bankaccount);
         setMessage("Account added successfully");
         setErrMessage("");
       })
@@ -55,6 +58,23 @@ const BankAccount = () => {
         }
         setMessage("");
       });
+  }
+
+  const handleDisplay = (e) => {
+    e.preventDefault();
+    BankAccountService.getAccountById(2)
+      .then((resp) => {
+        console.log(resp.data);
+        setMessage("Got Account with id");
+        setErrMessage("");
+      })
+      .catch((err) => {
+        console.log(err.response.data);
+        setMessage("");
+        setErrMessage("Error in getting Account details");
+      });
+
+      
   }
 
   return (
@@ -80,6 +100,7 @@ const BankAccount = () => {
         <p>Bank Name: <input type="text" value={bankaccount.bankName} onChange={handleBankNameChange} /></p>
         <p><button type='submit'>Add Account</button></p>
       </form>
+      <p><button onClick={handleDisplay}>Get Account Details</button></p>
     </Base>
   );
 }
