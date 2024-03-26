@@ -50,10 +50,9 @@ const BankAccount = () => {
       })
       .catch((err) => {
         if (err.response && err.response.data) {
-          console.log(err.response.data);
-          setErrMessage("Error occurred in the following field: " + JSON.stringify(err.response.data));
+          console.error(err.response.data);
         } else {
-          console.log(err);
+          console.error(err);
           setErrMessage("An error occurred. Please try again later.");
         }
         setMessage("");

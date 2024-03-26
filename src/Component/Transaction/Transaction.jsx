@@ -4,7 +4,7 @@ import TransactionService from '../../Services/TransactionService';
 
 const Transaction = () => {
   const [transaction, setTransaction] = useState({
-    userId: "currentUserId", // Assuming you have the current user ID
+    userId: "", // Assuming you have the current user ID
     postId: "",
     amount: ""
   });
@@ -28,7 +28,6 @@ const Transaction = () => {
       .catch((err) => {
         if (err.response && err.response.data) {
           console.log(err.response.data);
-          setErrMessage("Error occurred in the following field: " + JSON.stringify(err.response.data));
         } else {
           console.log(err);
           setErrMessage("An error occurred. Please try again later.");
