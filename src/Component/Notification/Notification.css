@@ -21,19 +21,19 @@ h2{
   }
   
   .notification-box {
-    background-color: white;
-    border: 1px solid navy;
+    background-color: navy;
+    border: 1px solid white;
     padding: 10px;
     margin: 10px 0; 
     width: 900px; 
     text-align: center;
     box-shadow: 5px 10px 18px #1e1f5c;
-    border-radius: 3px;
+    border-radius: 5px;
   }
   
   .message {
     font-weight: bold;
-    color:navy;
+    color:white;
   }
   
   .datetime {
