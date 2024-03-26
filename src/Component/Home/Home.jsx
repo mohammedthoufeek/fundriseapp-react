@@ -1,7 +1,5 @@
 import React from 'react'
 import ListPost from '../ListPost/ListPost'
-import Navbar from '../Navbar/Navbar'
-import Footer from '../Footer'
 import Base from '../Base'
 import { getCharity, getInvestors, getProfile, getUsers } from '../../Services/UserService'
 import { useState } from 'react'
@@ -120,6 +118,7 @@ const onClicking=(id)=>{
             </div>
         </div>
         {navigate && <Navigate to="/message" />}
+      <ListPost/>
       </Base>
       </div>
   )
