@@ -1,8 +1,22 @@
 import { Outlet, Link } from "react-router-dom";
 import React from 'react';
 import './Navbar.css'; // Import the custom CSS file for additional styling
-
+import { signOut } from "../../Services/UserService";
+import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
+  const navigate = useNavigate();
+  const signout= () => {
+    signOut().then(data => {
+      
+      if (data==undefined) {
+        console.log(data);
+      } else {
+        localStorage.removeItem("userData");
+        localStorage.removeItem("messageduser")
+        navigate('/');
+      }
+    });
+  };
   return (
     <div>
       <nav className="navbar navbar-expand-sm navbar-dark bg-primary">
@@ -25,7 +39,7 @@ const Navbar = () => {
                 <Link to="/profile" className="nav-link">Profile</Link>
               </li>
               <li className="nav-item">
-                <div className="nav-link">SignOut</div>
+                <div onClick={signout} className="nav-link">SignOut</div>
               </li>
             </ul>
           </div>

@@ -39,7 +39,22 @@ export const signin = (user) => {
         console.error("Error:", error);
       });
   };
-  
+
+  export const signOut = ()=>{
+    return fetch ("http://localhost:8090/signout",{
+        'method':"GET",
+    })
+    .then((response)=>{
+        console.log("success")
+        console.log(response)
+     return response.json();
+
+
+    }).catch((err)=>{
+    console.log("error",err);
+    })
+
+}
 
 export const getUsers = ()=>{
     return fetch ("http://localhost:8090/profiles/users",{
