@@ -1,0 +1,17 @@
+
+
+.users-list {
+    margin-left: 1100px;
+    border: 1px solid #000; /* Specify the border style, color, and width */
+    padding: 10px; /* Add padding inside the box */
+    background-color: #f9f9f9; /* Specify the background color */
+}
+.list{
+    display: flex;
+    justify-content: space-between;  
+}
+
+.rbutton{
+    padding: 5px 12px;
+    size: 6px;
+}

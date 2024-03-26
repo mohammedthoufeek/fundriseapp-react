@@ -25,11 +25,17 @@ const onSubmit=(event)=> {
     event.preventDefault();
     setValues({ ...values, error: false, loading: true });
     signin({ email, password })
-      .then((data) => {
-        console.log("DATA", data);
-        setValues({ ...values, data,didRedirect:true});
-          localStorage.setItem("userData",data)
-        }).catch((e)=> console.log(e));
+    .then((data) => {
+      console.log("DATA", data);
+      if (data && !data.error) {
+        setValues({ ...values, data, didRedirect: true });
+        localStorage.setItem("userData", JSON.stringify(data));
+      } else {
+        // Handle error response from backend
+        console.error("Error in response:", data.error);
+      }
+    })
+    .catch((error) => console.log(error));
   };
 
 

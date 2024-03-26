@@ -18,6 +18,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import AddPost from './Component/AddPost/AddPost';
 import Notification from './Component/Notification/Notification';
+import ListMessages from './Component/ListMessages/ListMessages';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/signup" element={<Signup />} /> 
           <Route path="/home" element={<Home />}  />
             <Route path="/message" element={<Message />} />
+            <Route path="/listmessage" element={<ListMessages />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/bankaccount" element={<BankAccount />} />
             <Route path="/transaction" element={<Transaction />} />

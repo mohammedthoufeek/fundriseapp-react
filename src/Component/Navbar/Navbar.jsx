@@ -19,7 +19,7 @@ const Navbar = () => {
                 <Link to="/notification" className="nav-link">Notifaction</Link>
               </li>
               <li className="nav-item">
-                <Link to="/message" className="nav-link">Message</Link>
+                <Link to="/listmessage" className="nav-link">Message</Link>
               </li>
               <li className="nav-item">
                 <Link to="/profile" className="nav-link">Profile</Link>
