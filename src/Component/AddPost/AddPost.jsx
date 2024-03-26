@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Base from '../Base'
 import postService from '../../Services/PostService';
 import { useNavigate } from 'react-router-dom';
@@ -17,6 +17,8 @@ const AddPost = () => {
 
   const createPost = (e) => {
     e.preventDefault();
+    const userDataFromLocalStorage = JSON.parse(localStorage.getItem("userData")) || {};
+    console.log("User Id",userDataFromLocalStorage.id)
     postService.addNewPost(post,1).then((data) => {
         console.log(data);
         setSuccess('Post updated successfully');
@@ -24,11 +26,16 @@ const AddPost = () => {
         navigate('/home');
 
       }).catch((err)=>{
-        console.log("Error"+err)
+        console.error("Error"+err)
         setSuccess('');
         setErrorMessage('Please fill in all required fields');
       });
-};
+    };
+
+    useEffect(() => {
+        const userDataFromLocalStorage = JSON.parse(localStorage.getItem("userData")) || {};
+        console.log(userDataFromLocalStorage.id);
+      }, []);
 
 
   return (
