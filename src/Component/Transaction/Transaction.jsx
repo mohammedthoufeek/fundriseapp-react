@@ -1,8 +1,11 @@
 import React from 'react'
+import Base from '../Base'
 
 const Transaction = () => {
   return (
-    <div>Transaction</div>
+    <Base>
+   <div>Transaction</div>
+    </Base> 
   )
 }
 
