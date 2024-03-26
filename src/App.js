@@ -1,6 +1,4 @@
-import Navbar from './Component/Navbar/Navbar';
 import Home from './Component/Home/Home';
-import NoPage from './Component/NoPage/NoPage';
 import SignIn from './Component/Signin/SignIn';
 import Signup from './Component/Signup/Signup';
 import Message from './Component/Messages/Messages';
@@ -11,7 +9,7 @@ import BankAccount from './Component/Bank-account/BankAccount';
 import Transaction from './Component/Transaction/Transaction';
 
 
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import AddPost from './Component/AddPost/AddPost';
