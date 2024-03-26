@@ -22,7 +22,7 @@ const Profile = () => {
 
   return (
     <Base>
-    <div>
+    <div className="profile-details-container">
       {profileData ? (
         <div>
           <h2>Profile Details</h2>

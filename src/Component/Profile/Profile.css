@@ -1,0 +1,21 @@
+.profile-details-container {
+    display: flex;
+    flex-direction: column;
+    width: 66.666%; /* Set the width to 2/3 (2:6 ratio) */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .profile-details-container > div {
+    margin-bottom: 15px;
+  }
+  
+  .profile-details-container h2 {
+    margin-bottom: 15px;
+  }
+  
+  .profile-details-container p {
+    margin-bottom: 10px;
+  }
+  
