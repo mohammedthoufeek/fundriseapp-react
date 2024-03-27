@@ -3,7 +3,9 @@ class ProfileService{
 
   async getProfileById(userId){
     try{
-        const response=await axiosInstance.get("http://localhost:8090/profile/1");
+
+        const response=await axiosInstance.get(`http://localhost:8090/profile/${userId}`);
+
         return response.data;
     }
     catch(error){

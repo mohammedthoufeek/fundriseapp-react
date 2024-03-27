@@ -42,6 +42,17 @@ class PostService{
             return [];
         }
       }
+      async getPostByUserId(userId){
+        try{
+            const response=await axiosInstance.get(`http://localhost:8090/user/${userId}/posts`);
+            return response.data;
+        }
+        catch(error){
+            console.error("Error fetching post:",error)
+            return [];
+        }
+      }
+
 
 }
 
