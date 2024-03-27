@@ -11,16 +11,14 @@ const ListMessages = () => {
   const [users,setUsers]=useState([])
   
   const [navigate,setNavigate]=useState(false)
-  const loadAllDatas = ( id)=>{
+  const loadAllDatas = (id)=>{
     getMessageUsers(id).then(data=>{
       console.log({data});
       if(data.error){
        console.log(data.error)
-      }else{
-      
+      }else{ 
         setUsers(data);
-        console.log("users",users)
-        
+        console.log("users",users)  
       }
     })}
     const onClicking=(id)=>{
