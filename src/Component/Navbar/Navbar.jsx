@@ -33,7 +33,13 @@ const Navbar = () => {
                 <Link to="/notification" className="nav-link">Notification</Link>
               </li>
               <li className="nav-item">
-                <Link to="/listmessage" className="nav-link">Message</Link>
+                <Link to="/bankaccount" className="nav-link">Bank Account</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/transaction" className="nav-link">Transaction</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/message" className="nav-link">Message</Link>
               </li>
               <li className="nav-item">
                 <Link to="/profile" className="nav-link">Profile</Link>
