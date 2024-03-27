@@ -29,28 +29,6 @@ const Notification = ({ userId }) => {
     console.log(id);
     navigate(`/post/${id}`);
   };
-
-
-import "./Notification.css";
-//import { signin } from '../../Services/UserService';
-import { useState, useEffect } from 'react';
-import  notificationService from '../../Services/NotificationService';
-
-
-
-const Notification = ({ userId }) => {
-  const [notifications, setNotifications] = useState([]);
-  
-  useEffect(() => {
-    const fetchNotifications = async () => {
-      const data = await notificationService.getAllNotificationsByUserId(userId);
-      setNotifications(data);
-    };
-
-    fetchNotifications();
-  }, [userId]);
-
-
   return (
     <Base>
     <div>

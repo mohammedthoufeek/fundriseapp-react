@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import Footer from '../Footer'
 import { registerUser } from '../../Services/UserService'
 import { useState } from 'react'
+
 const Signup = () => {
   const [values,setValues] =useState({
     id:0,
@@ -15,6 +16,7 @@ const Signup = () => {
      email:"",
      password:""
 })
+const [redirect,setRedirect] =useState(false)
 const {name,dob,address,phonenumber,age,usertype,email,password}=values
 const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
@@ -36,7 +38,11 @@ const onSubmit = (event)=>{
                     usertype:"",
                     email:"",
                     password:""
-                })}).catch(err=>{console.log(err)})
+                })
+                setRedirect(true);
+              }
+                
+                ).catch(err=>{console.log(err)})
 }
   return (
    <div>
@@ -127,8 +133,9 @@ const onSubmit = (event)=>{
    </div>
   </div>
   <Footer/>
+  {redirect&& <Navigate to="/" />}
   </div>
-
+   
   )
 }
 
