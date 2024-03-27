@@ -36,8 +36,6 @@ const Notification = ({ userId }) => {
 
       <h2 style={{ color: '#1e1f5c' }}>Notifications</h2>
 
-      <h2>Notifications</h2>
-
       {notifications.length > 0 ? (
         <ul className="notification-list">
           {notifications.map(notification => (

@@ -13,17 +13,20 @@ const Profile = () => {
   useEffect(() => {
     userDataFromLocalStorage = JSON.parse(localStorage.getItem('userData')) || {};
     setUserId(userDataFromLocalStorage.id);
+
+
+    const fetchProfile = async () => {
+      try {
+        const data = await profileService.getProfileById(userDataFromLocalStorage.id);
+        setProfileData(data);
+      } catch (error) {
+        console.error('Error fetching profile:', error);
+      }
+    };
+
     fetchProfile();
   }, []);
-  const fetchProfile = async () => {
-    try {
-      const data = await profileService.getProfileById(userDataFromLocalStorage.id);
-
-      setProfileData(data);
-    } catch (error) {
-      console.error('Error fetching profile:', error);
-    }
-  };
+ 
   const getAllPostByUserId = () => {
     PostService.getPostByUserId(userid).then((data) => {
       setPostDetails(data);
@@ -66,9 +69,10 @@ const Profile = () => {
           </div>
         )}
       </div>
-    </Base>
+    </Base> 
 
-  
-  )}
+  );
+};
+
 
 export default Profile;
