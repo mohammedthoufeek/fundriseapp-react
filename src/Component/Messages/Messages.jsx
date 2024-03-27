@@ -78,7 +78,9 @@ const onSubmit = (event)=>{
       if (data==undefined) {
         console.log(data);
       } else {
+        console.log(data.messageList)
         setListMessages(data.messageList);
+        console.log(listmessages)
       }
     });
   };
@@ -96,7 +98,7 @@ const onSubmit = (event)=>{
         {listmessages.length > 0 && listmessages.map((list, index) => (
           <div className="message-item" key={index}>
             <div className="username">{list.user.id === userdata.id ? 'Me' : list.userName}</div>
-            <div className="message">{list.message}</div>
+            <div >{list.message}</div>
             <div className="meta-info">
               <span className="date">{list.date}, </span>
               <span className="time">{list.time}</span>

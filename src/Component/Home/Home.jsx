@@ -70,16 +70,19 @@ const onClicking=(id)=>{
   return (
     <div>
       <Base>
+      <div class="container1">
+    <div class="grid-container1">
+      <div class="listpost-container1"> <ListPost/></div>
       <div class="users-list">
       <div>
                 <h5>Users List</h5>
                 {users.length<1 && <p >No Users found</p>}
                 {users.length>1 && users.map((user,index)=>{
             return(
-                <div  class="boxx">
-                    <div  class="list" >
+                <div  class="boxx1">
+                    <div  class="list1" >
                     <p>{user.name}</p>
-                    <button onClick={() => onClicking(user.id)} className="rbutton">
+                    <button onClick={() => onClicking(user.id)} className="rbutton1">
                     <FontAwesomeIcon icon={faEnvelope} />
                     </button>
                     </div>
@@ -91,10 +94,10 @@ const onClicking=(id)=>{
                 {investors.length<1 && <p >No  Investors</p>}
                 {investors.length>1 && investors.map((investor,index)=>{
             return(
-                <div  class="boxx">
-                    <div  class="list" >
+                <div  class="boxx1">
+                    <div  class="list1" >
                     <p>{investor.name}</p>
-                    <button onClick={() => onClicking(investor.id)} class="rbutton" >
+                    <button onClick={() => onClicking(investor.id)} class="rbutton1" >
                     <FontAwesomeIcon icon={faEnvelope} />
                     </button>
                     </div>
@@ -106,10 +109,10 @@ const onClicking=(id)=>{
                 {charity.length<1 && <p >No Charities found</p>}
                 {charity.length>1 && charity.map((charityu,index)=>{
             return(
-                <div  class="boxx">
-                    <div  class="list" >
+                <div  class="boxx1">
+                    <div  class="list1" >
                     <p>{charityu.name}</p>
-                    <button onClick={() => onClicking(charityu.id)} class="rbutton" >
+                    <button onClick={() => onClicking(charityu.id)} class="rbutton1" >
                     <FontAwesomeIcon icon={faEnvelope} />
                     </button>
                     </div>
@@ -118,7 +121,7 @@ const onClicking=(id)=>{
             </div>
         </div>
         {navigate && <Navigate to="/message" />}
-      <ListPost/>
+     </div></div>
       </Base>
       </div>
   )

@@ -9,40 +9,21 @@ const Profile = () => {
   const [postDetails, setPostDetails] = useState([]);
   const [showPostDetails, setShowPostDetails] = useState(false);
   const [userid, setUserId] = useState(0);
-
   let userDataFromLocalStorage;
   useEffect(() => {
     userDataFromLocalStorage = JSON.parse(localStorage.getItem('userData')) || {};
     setUserId(userDataFromLocalStorage.id);
-
-    const fetchProfile = async () => {
-      try {
-        const data = await profileService.getProfileById(userDataFromLocalStorage.id);
-
-
-import Navbar from '../Navbar/Navbar'
-import Base from '../Base'
-
-import React, { useState, useEffect } from 'react';
-import  profileService from '../../Services/ProfileService';
-const Profile = () => {
-  const [profileData, setProfileData] = useState(null);
-  const userId = 1;
-  useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const data = await profileService.getProfileById(userId); // Fetch profile by ID 1
-
-        setProfileData(data);
-      } catch (error) {
-        console.error('Error fetching profile:', error);
-      }
-    };
-
     fetchProfile();
-
   }, []);
+  const fetchProfile = async () => {
+    try {
+      const data = await profileService.getProfileById(userDataFromLocalStorage.id);
 
+      setProfileData(data);
+    } catch (error) {
+      console.error('Error fetching profile:', error);
+    }
+  };
   const getAllPostByUserId = () => {
     PostService.getPostByUserId(userid).then((data) => {
       setPostDetails(data);
@@ -51,7 +32,6 @@ const Profile = () => {
       console.error(error);
     });
   };
-
   return (
     <Base>
       <div className="profile-container">
@@ -88,31 +68,7 @@ const Profile = () => {
       </div>
     </Base>
 
-  }, [userId]);
-
-  return (
-    <Base>
-    <div>
-      {profileData ? (
-        <div>
-          <h2>Profile Details</h2>
-          <p><strong>Name:</strong> {profileData.name}</p>
-          <p><strong>Email: </strong>{profileData.email}</p>
-          <p><strong>Address:</strong> { profileData.address }</p>
-          <p><strong>Phone Number:</strong> { profileData.phonenumber }</p>
-          <p><strong>Age:</strong> {profileData.age }</p>
-          <p><strong>DOB:</strong> { profileData.dob }</p>
-          <p><strong>User Type:</strong> {profileData.usertype }</p>
-          
-        </div>
-      ) : (
-        <p>Error fetching profile data.</p>
-      )}
-    </div>
-    </Base>
-    
-
-  );
-};
+  
+  )}
 
 export default Profile;
