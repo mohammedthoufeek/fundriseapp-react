@@ -29,7 +29,6 @@ const Notification = ({ userId }) => {
     console.log(id);
     navigate(`/post/${id}`);
   };
-
   return (
     <Base>
     <div>
