@@ -27,7 +27,7 @@ const Post = () => {
   };
 
   const transaction = (postId) => {
-      // Logic to handle transaction for the post with postId
+      navigate(`/transaction`)
       console.log(`Transaction for post ID: ${postId}`);
   };
 

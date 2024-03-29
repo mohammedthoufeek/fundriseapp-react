@@ -8,12 +8,11 @@ const Profile = () => {
   const [postDetails, setPostDetails] = useState([]);
   const [showPostDetails, setShowPostDetails] = useState(false);
   const [userid, setUserId] = useState(0);
-
   let userDataFromLocalStorage;
   useEffect(() => {
     userDataFromLocalStorage = JSON.parse(localStorage.getItem('userData')) || {};
     setUserId(userDataFromLocalStorage.id);
-
+    
     const fetchProfile = async () => {
       try {
         const data = await profileService.getProfileById(userDataFromLocalStorage.id);
@@ -25,7 +24,7 @@ const Profile = () => {
 
     fetchProfile();
   }, []);
-
+ 
   const getAllPostByUserId = () => {
     PostService.getPostByUserId(userid).then((data) => {
       setPostDetails(data);
@@ -34,7 +33,6 @@ const Profile = () => {
       console.error(error);
     });
   };
-
   return (
     <Base>
       <div className="profile-container">
@@ -69,9 +67,11 @@ const Profile = () => {
           </div>
         )}
       </div>
+
     </Base>
   );
 };
 
 export default Profile;
+
 

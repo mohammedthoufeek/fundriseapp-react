@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Base from '../Base';
 import TransactionService from '../../Services/TransactionService';
+
 import Post from '../Post/Post';
 
 const Transaction = () => {
@@ -12,6 +13,7 @@ const Transaction = () => {
 
   const [message, setMessage] = useState("");
   const [errMessage, setErrMessage] = useState("");
+
   const [userid, setUserId] = useState(0);
 
   let userDataFromLocalStorage;
@@ -30,6 +32,7 @@ const Transaction = () => {
 
     fetchProfile();
   }, []);
+
 
   const handleAmountChange = (e) => {
     setTransaction({ ...transaction, amount: e.target.value });
