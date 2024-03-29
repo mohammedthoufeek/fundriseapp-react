@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Base from '../Base';
 import profileService from '../../Services/ProfileService';
@@ -13,8 +12,7 @@ const Profile = () => {
   useEffect(() => {
     userDataFromLocalStorage = JSON.parse(localStorage.getItem('userData')) || {};
     setUserId(userDataFromLocalStorage.id);
-
-
+    
     const fetchProfile = async () => {
       try {
         const data = await profileService.getProfileById(userDataFromLocalStorage.id);
@@ -44,10 +42,10 @@ const Profile = () => {
             <p><strong>Name:</strong> {profileData.name}</p>
             <p><strong>Email:</strong> {profileData.email}</p>
             <p><strong>Address:</strong> {profileData.address}</p>
-            <p><strong>Phone Number:</strong> {profileData.phoneNumber}</p>
+            <p><strong>Phone Number:</strong> {profileData.phonenumber}</p>
             <p><strong>Age:</strong> {profileData.age}</p>
             <p><strong>DOB:</strong> {profileData.dob}</p>
-            <p><strong>User Type:</strong> {profileData.userType}</p>
+            <p><strong>User Type:</strong> {profileData.usertype}</p>
             <button onClick={getAllPostByUserId} className="btn btn-primary">View Details</button>
           </div>
         ) : (
@@ -69,10 +67,11 @@ const Profile = () => {
           </div>
         )}
       </div>
-    </Base> 
 
+    </Base>
   );
 };
 
-
 export default Profile;
+
+

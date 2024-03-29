@@ -29,6 +29,7 @@ const Notification = ({ userId }) => {
     console.log(id);
     navigate(`/post/${id}`);
   };
+
   return (
     <Base>
     <div>
@@ -57,5 +58,6 @@ const Notification = ({ userId }) => {
     
   );
 };
+}
 
 export default Notification;
